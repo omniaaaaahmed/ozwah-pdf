@@ -13,6 +13,7 @@
     <style>
       html {
         font-size: 5px;
+        -webkit-print-color-adjust: exact; 
       }
 
       body {
@@ -23,13 +24,18 @@
       }
 
       .container {
-        background-image: url("https://i.ibb.co/5ctWLgp/pdf-background.png");
-        background-repeat: no-repeat;
-        background-size: 100%;
         position: relative;
-        margin: 0;
-        background-attachment: local;
-        page-break-after: auto;
+      }
+      .print{
+        position: relative;
+      }
+      .containerImg{
+        position: absolute;
+        z-index: 0;
+      }
+      img{
+        width: 100%;
+        display: block;
       }
 
       .content {
@@ -152,6 +158,10 @@
   </head>
 
   <body class="print">
+    <div class="containerImg">
+      <img src="https://test-bucket-b5lgh23.s3.amazonaws.com/1692613290962-e0e54f49-2b06-465d-938a-9a8fb6cff700.png" alt="">
+
+    </div>
     <div class="container">
       <table class="content">
         <div class="header">
@@ -178,12 +188,12 @@
 
         <tr class="d-tabel">
           <td class="title">رقم الفاتورة :</td>
-          <td class="info" id="paymetId">(2232)</td>
+          <td class="info" id="paymetId"></td>
         </tr>
 
         <tr class="d-tabel">
           <td class="title">تاريخ الفاتورة :</td>
-          <td class="info" id="paymentDate">311236434200003</td>
+          <td class="info" id="paymentDate"></td>
         </tr>
 
         <tr class="border"></tr>
@@ -194,22 +204,21 @@
         <tr class="customer-box">
           <td class="title" style="width: 30%">اسم العميل</td>
           <td class="info" id="userName">
-            الرياض - حي حطين - طريق الأمير تركي بن عبدالعزيز
           </td>
         </tr>
         <tr class="customer-box customer-box-1">
           <td class="title" style="width: 30%">رقم العميل</td>
-          <td class="info" id="userId">311236434200003</td>
+          <td class="info" id="userId"></td>
         </tr>
         <tr class="customer-box">
           <td class="title" style="width: 30%">المبلغ</td>
-          <td class="info" id="amount">311236434200003</td>
+          <td class="info" id="amount"></td>
         </tr>
         <tr class="customer-box customer-box-1">
           <td class="title" style="width: 30%">طريقة الدفع</td>
-          <td class="info" id="paymentMethod">311236434200003</td>
+          <td class="info" id="paymentMethod"></td>
         </tr>
-        <tr style="padding-bottom: 33%; display: block"></tr>
+        <tr ></tr>
       </table>
       <div class="footer" id="pageFooter">
         جميع حقوق النشر محفوظة لمنصة عزوة 2022
